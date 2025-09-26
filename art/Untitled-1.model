@@ -1,0 +1,16 @@
+# Made using Asset Forge (2.5.2)
+
+:materials
+
+[name:kenneyconveyor-striping;color:RGBA(0.961, 0.725, 0.259, 1.000);scale:(1.0, 1.0);shader:Default;mapping:1;valueA:0.5;valueB:0;]
+[name:kenneyconveyor-grey;color:RGBA(0.580, 0.604, 0.678, 1.000);scale:(1.0, 1.0);shader:Default;mapping:1;valueA:0.5;valueB:0;]
+[name:kenneyconveyor-dark;color:RGBA(0.251, 0.263, 0.306, 1.000);scale:(1.0, 1.0);shader:Default;mapping:1;valueA:0.5;valueB:0;]
+
+:models
+
+[name:;collection:KenneyConveyor;type:cover-stripe;position:(1.0000, 0.0000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(1.0000, 1.0000, 1.0000);group:;locked:False;hidden:False;materials:kenneyconveyor-grey+kenneyconveyor-grey+kenneyconveyor-grey+kenneyconveyor-striping;]
+[name:;collection:KenneyConveyor;type:conveyor-bars-stripe-high;position:(1.0000, 0.0000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(1.0000, 1.0000, 1.0000);group:;locked:False;hidden:False;materials:kenneyconveyor-grey+kenneyconveyor-dark+kenneyconveyor-dark;]
+[name:;collection:KenneySpace;type:chimney;position:(0.0000, 0.0000, 1.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(2.0000, 2.0000, 2.0000);group:;locked:False;hidden:False;materials:kenneyconveyor-grey+kenneyconveyor-dark;]
+[name:;collection:Primitives;type:block;position:(-0.4000, -0.0550, 0.0000);rotation:(0.0000, 90.0000, 0.0000);scale:(3.0000, 0.4550, 2.2000);group:;locked:False;hidden:False;materials:kenneyconveyor-striping;]
+[name:;collection:Primitives;type:block;position:(-0.4000, 0.3900, 0.0000);rotation:(0.0000, 90.0000, 0.0000);scale:(3.0000, 0.9100, 2.2000);group:;locked:False;hidden:False;materials:kenneyconveyor-grey;]
+[name:;collection:Primitives;type:arc;position:(-0.4000, 1.3000, -0.9000);rotation:(0.0000, 0.0000, 0.0000);scale:(1.0000, 1.0000, 1.0000);group:;locked:False;hidden:False;materials:kenneyconveyor-grey;]

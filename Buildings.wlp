@@ -1,0 +1,1680 @@
+{
+    "settings": {
+        "project": {
+            "kind": "prefab",
+            "name": "Buildings",
+            "version": [
+                1,
+                5,
+                0,
+                2
+            ],
+            "prefab": true
+        },
+        "runtime": {
+            "loadUncompressedImagesAsBitmap": false
+        }
+    },
+    "files": {
+        "1": {
+            "fileName": "assets/Miner.glb",
+            "importerName": ""
+        },
+        "2": {
+            "fileName": "assets/Buildings.fbx",
+            "importerName": ""
+        },
+        "3": {
+            "fileName": "assets/ImphenziaPixPal_BaseColor_2K.png",
+            "importerName": ""
+        },
+        "4": {
+            "fileName": "assets/ImphenziaPixPal_Emission_2K.png",
+            "importerName": ""
+        }
+    },
+    "meshes": {
+        "7": {
+            "link": {
+                "name": "PrimitivePlane",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "PrimitiveCube",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "PrimitiveSphere",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "PrimitiveCone",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "PrimitiveCylinder",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "PrimitiveCircle",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": " Instance",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "14": {
+            "link": {
+                "name": " Instance.0",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "15": {
+            "link": {
+                "name": " Instance.1",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "16": {
+            "link": {
+                "name": " Instance.2",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "17": {
+            "link": {
+                "name": " Instance.3",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "18": {
+            "link": {
+                "name": " Instance.4",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "19": {
+            "link": {
+                "name": "mesh_0",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "20": {
+            "link": {
+                "name": "mesh_1",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "21": {
+            "link": {
+                "name": "mesh_2",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "22": {
+            "link": {
+                "name": "mesh_0",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "23": {
+            "link": {
+                "name": "mesh_1",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "24": {
+            "link": {
+                "name": "mesh_2",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "25": {
+            "link": {
+                "name": "mesh_3",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "26": {
+            "link": {
+                "name": "mesh_4",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "27": {
+            "link": {
+                "name": "mesh_5",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "28": {
+            "link": {
+                "name": "mesh_6",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "29": {
+            "link": {
+                "name": "mesh_7",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "30": {
+            "link": {
+                "name": "mesh_8",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "31": {
+            "link": {
+                "name": "mesh_9",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "32": {
+            "link": {
+                "name": "mesh_10",
+                "file": "assets\\Buildings.fbx"
+            }
+        },
+        "33": {
+            "link": {
+                "name": "mesh_11",
+                "file": "assets\\Buildings.fbx"
+            }
+        }
+    },
+    "images": {
+        "1": {
+            "link": {
+                "name": "Miner",
+                "file": "assets\\Miner.glb"
+            },
+            "compression": "none"
+        },
+        "2": {
+            "link": {
+                "name": "ImphenziaPixPal_BaseColor_2K.png",
+                "file": "assets\\ImphenziaPixPal_BaseColor_2K.png"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "ImphenziaPixPal_Emission_2K.png",
+                "file": "assets\\ImphenziaPixPal_Emission_2K.png"
+            }
+        }
+    },
+    "textures": {
+        "1": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "base_color_texture",
+                "file": "assets\\Buildings.fbx"
+            },
+            "image": "2"
+        },
+        "3": {
+            "link": {
+                "name": "emission_color_texture",
+                "file": "assets\\Buildings.fbx"
+            },
+            "image": "3"
+        },
+        "4": {
+            "link": {
+                "name": "ImphenziaPixPal_BaseColor_2K.png",
+                "file": "assets\\ImphenziaPixPal_BaseColor_2K.png"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "ImphenziaPixPal_Emission_2K.png",
+                "file": "assets\\ImphenziaPixPal_Emission_2K.png"
+            }
+        }
+    },
+    "fonts": {},
+    "shaderChunks": {
+        "1": {
+            "link": {
+                "name": "lib\\Color.glsl",
+                "file": "default"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "lib\\Compatibility.glsl",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "lib\\CoordinateSystems.glsl",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "lib\\GI.glsl",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "lib\\Inputs.glsl",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "lib\\Lights.glsl",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "lib\\Materials.glsl",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "lib\\Math.glsl",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "lib\\MorphTargets.glsl",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "lib\\Packing.glsl",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "lib\\PhysicalBSDF.glsl",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "lib\\Quaternion.glsl",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "lib\\SkyProcedural.glsl",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "lib\\Slug.frag.glsl",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "lib\\Slug.vert.glsl",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "lib\\Surface.glsl",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "lib\\Textures.glsl",
+                "file": "default"
+            }
+        },
+        "18": {
+            "link": {
+                "name": "lib\\Uniforms.glsl",
+                "file": "default"
+            }
+        }
+    },
+    "shaders": {
+        "1": {
+            "link": {
+                "name": "AtmosphericSky.frag",
+                "file": "default"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "Background.frag",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "Color.frag",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "Depth.frag",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "DistanceFieldVector.frag",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Dynamic.vert",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "Flat.frag",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "FullScreenTriangle.vert",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "MeshVisualizer.frag",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "Phong.frag",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "Physical.frag",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "Skinning.vert",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "Sky.frag",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "Text.frag",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "Text.vert",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "TileFeedback.frag",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "Particle.frag",
+                "file": "default"
+            }
+        }
+    },
+    "pipelines": {
+        "1": {
+            "link": {
+                "name": "Color",
+                "file": "default"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "VertexColor",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            },
+            "features": {
+                "WITH_EMISSIVE": true
+            }
+        },
+        "9": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "WITH_EMISSIVE": true
+            }
+        },
+        "10": {
+            "link": {
+                "name": "Phong Normalmapped",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "Phong Lightmapped",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "Physical Opaque",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "TileFeedback",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        },
+        "18": {
+            "link": {
+                "name": "Sky",
+                "file": "default"
+            }
+        },
+        "19": {
+            "link": {
+                "name": "AtmosphericSky",
+                "file": "default"
+            }
+        }
+    },
+    "materials": {
+        "2": {
+            "name": "White",
+            "Phong": {
+                "diffuseColor": [
+                    0.9098039,
+                    0.9098039,
+                    0.9098039,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.999911299019004e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 10,
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.1921568,
+                    0.1921568,
+                    0.1921568,
+                    1.0
+                ]
+            },
+            "pipeline": "8"
+        },
+        "1": {
+            "name": "Pink",
+            "Phong": {
+                "diffuseColor": [
+                    0.9098039,
+                    0.0,
+                    0.5411764,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.1921568,
+                    0.0,
+                    0.1310161,
+                    1.0
+                ]
+            },
+            "pipeline": "8"
+        },
+        "4": {
+            "name": "Yellow",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.8039215,
+                    0.0,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.2588235,
+                    0.2080737,
+                    0.0,
+                    1.0
+                ]
+            },
+            "pipeline": "8"
+        },
+        "5": {
+            "name": "Green",
+            "Phong": {
+                "diffuseColor": [
+                    0.1529411,
+                    0.7882353,
+                    0.5411764,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.0,
+                    0.1686274,
+                    0.10305,
+                    1.0
+                ]
+            },
+            "pipeline": "8"
+        },
+        "6": {
+            "link": {
+                "name": "Miner",
+                "file": "assets\\Miner.glb"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.462745,
+                    0.462745,
+                    0.462745,
+                    1.0
+                ],
+                "diffuseTexture": null,
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ]
+            },
+            "pipeline": "8"
+        },
+        "7": {
+            "link": {
+                "name": "kenneyconveyor-grey(Clone)",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "kenneyconveyor-striping(Clone)",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "kenneyconveyor-dark(Clone)",
+                "file": "assets\\Miner.glb"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "ImpMaterial",
+                "file": "assets\\Buildings.fbx"
+            },
+            "Phong": {
+                "ambientColor": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1.0
+                ],
+                "diffuseTexture": "4",
+                "emissiveTexture": "5"
+            }
+        }
+    },
+    "objects": {
+        "1": {
+            "name": "Miner",
+            "translation": [
+                -2.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "building-meta",
+                    "building-meta": {
+                        "size": [
+                            2.0,
+                            2.0,
+                            2.0
+                        ]
+                    }
+                }
+            ]
+        },
+        "5": {
+            "name": "Processor",
+            "translation": [
+                1.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "building-meta",
+                    "building-meta": {
+                        "size": [
+                            2.0,
+                            2.0,
+                            1.0
+                        ]
+                    }
+                }
+            ]
+        },
+        "7": {
+            "name": "Pipe",
+            "translation": [
+                -1.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "building-meta"
+                }
+            ]
+        },
+        "9": {
+            "name": "PipeCorner",
+            "parent": "7",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "14": {
+            "name": "Design Grid"
+        },
+        "15": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071068
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499999,
+                0.4499999
+            ]
+        },
+        "16": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499998,
+                0.4499998
+            ],
+            "translation": [
+                -1.0,
+                0.0,
+                0.0
+            ]
+        },
+        "17": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499998,
+                0.4499998
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "18": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499997,
+                0.4499997
+            ],
+            "translation": [
+                -1.0,
+                0.0,
+                1.0
+            ]
+        },
+        "19": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499995,
+                0.4499995
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -1.0
+            ]
+        },
+        "20": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499993,
+                0.4499993
+            ],
+            "translation": [
+                -1.0,
+                0.0,
+                -1.0
+            ]
+        },
+        "21": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499997,
+                0.4499997
+            ],
+            "translation": [
+                -2.0,
+                0.0,
+                0.0
+            ]
+        },
+        "22": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499996,
+                0.4499996
+            ],
+            "translation": [
+                -2.0,
+                0.0,
+                1.0
+            ]
+        },
+        "23": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499992,
+                0.4499992
+            ],
+            "translation": [
+                -2.0,
+                0.0,
+                -1.0
+            ]
+        },
+        "24": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499996,
+                0.4499996
+            ],
+            "translation": [
+                -3.0,
+                0.0,
+                0.0
+            ]
+        },
+        "25": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499995,
+                0.4499995
+            ],
+            "translation": [
+                -3.0,
+                0.0,
+                1.0
+            ]
+        },
+        "26": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499991,
+                0.4499991
+            ],
+            "translation": [
+                -3.0,
+                0.0,
+                -1.0
+            ]
+        },
+        "27": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499993,
+                0.4499993
+            ],
+            "translation": [
+                1.0,
+                0.0,
+                0.0
+            ]
+        },
+        "28": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499992,
+                0.4499992
+            ],
+            "translation": [
+                1.0,
+                0.0,
+                1.0
+            ]
+        },
+        "29": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499989,
+                0.4499989
+            ],
+            "translation": [
+                1.0,
+                0.0,
+                -1.0
+            ]
+        },
+        "30": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499991,
+                0.4499991
+            ],
+            "translation": [
+                2.0,
+                0.0,
+                0.0
+            ]
+        },
+        "31": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.449999,
+                0.449999
+            ],
+            "translation": [
+                2.0,
+                0.0,
+                1.0
+            ]
+        },
+        "32": {
+            "name": "Mesh",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                0.4499999,
+                0.4499986,
+                0.4499986
+            ],
+            "translation": [
+                2.0,
+                0.0,
+                -1.0
+            ]
+        },
+        "11": {
+            "link": {
+                "name": "Miner",
+                "file": "assets\\Buildings.fbx"
+            },
+            "parent": "1",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "mesh": {
+                        "material": "10",
+                        "mesh": "25"
+                    }
+                }
+            ]
+        },
+        "10": {
+            "link": {
+                "name": "Pipe",
+                "file": "assets\\Buildings.fbx"
+            },
+            "parent": "7",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                1.0,
+                0.9999999,
+                0.9999999
+            ],
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "mesh": {
+                        "material": "10"
+                    }
+                }
+            ]
+        },
+        "8": {
+            "link": {
+                "name": "PipeEnd<Pipe",
+                "file": "assets\\Buildings.fbx"
+            },
+            "parent": "10"
+        },
+        "12": {
+            "link": {
+                "name": "PipeCenterFull",
+                "file": "assets\\Buildings.fbx"
+            },
+            "parent": "7",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                1.0,
+                0.9999999,
+                0.9999999
+            ]
+        },
+        "33": {
+            "link": {
+                "name": "PipeCenterOpen",
+                "file": "assets\\Buildings.fbx"
+            },
+            "components": [
+                {
+                    "originalIndex": 0
+                }
+            ],
+            "parent": "7",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                1.0,
+                0.9999999,
+                0.9999999
+            ]
+        },
+        "34": {
+            "name": "Mesh.000",
+            "parent": "5",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "30",
+                        "material": "10"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "translation": [
+                -1.0,
+                0.0,
+                0.0
+            ],
+            "scaling": [
+                1.0,
+                0.9999997,
+                0.9999997
+            ]
+        },
+        "6": {
+            "name": "Storage",
+            "components": [
+                {
+                    "type": "building-meta",
+                    "building-meta": {
+                        "size": [
+                            1.0,
+                            1.5,
+                            1.0
+                        ]
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "translation": [
+                1.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "36": {
+            "name": "Mesh.001",
+            "parent": "6",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "32",
+                        "material": "10"
+                    }
+                }
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071068
+            ]
+        },
+        "37": {
+            "name": "Belt",
+            "components": [
+                {
+                    "type": "building-meta",
+                    "building-meta": {
+                        "size": [
+                            1.0,
+                            0.75,
+                            1.0
+                        ]
+                    }
+                }
+            ]
+        },
+        "38": {
+            "link": {
+                "name": "Belt",
+                "file": "assets\\Buildings.fbx"
+            },
+            "parent": "37",
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                1.0,
+                0.9999999,
+                0.9999999
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "mesh": {
+                        "mesh": "22",
+                        "material": "10"
+                    }
+                }
+            ]
+        },
+        "39": {
+            "link": {
+                "name": "LeftSide<Belt",
+                "file": "assets\\Buildings.fbx"
+            },
+            "parent": "38",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "mesh": {
+                        "mesh": "24",
+                        "material": "10"
+                    }
+                }
+            ]
+        },
+        "40": {
+            "link": {
+                "name": "RightSide<Belt",
+                "file": "assets\\Buildings.fbx"
+            },
+            "parent": "38",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "mesh": {
+                        "mesh": "31",
+                        "material": "10"
+                    }
+                }
+            ]
+        }
+    },
+    "animations": {},
+    "skins": {},
+    "languages": {},
+    "morphTargets": {},
+    "particleEffects": {},
+    "probeVolumeScenarios": {},
+    "plugins": {}
+}

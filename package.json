@@ -1,0 +1,23 @@
+{
+    "name": "Tilemap",
+    "version": "1.0.0",
+    "description": "My Wonderland project",
+    "main": "js/index.js",
+    "type": "module",
+    "module": "js/index.js",
+    "scripts": {
+        "build": "echo \"The 'build' script is run by the editor and should produce your application bundle\""
+    },
+    "keywords": [
+        "wonderland-engine"
+    ],
+    "dependencies": {
+        "@sorskoot/wonderland-components": "file:E:\\Dev\\SorskootWonderlandComponents\\sorskoot-wonderland-components-1.5.5.tgz",
+        "@wonderlandengine/api": ">=1.5.0-rc.2 <1.6.0",
+        "@wonderlandengine/components": "^1.2.3",
+        "gl-matrix": "^3.4.3"
+    },
+    "overrides": {
+        "@wonderlandengine/api": "$@wonderlandengine/api"
+    }
+}
