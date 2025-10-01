@@ -6,9 +6,12 @@ import {
     ComponentConstructor,
 } from '@wonderlandengine/api';
 import { property } from '@wonderlandengine/api/decorators.js';
-import { wlUtils, CellData } from '@sorskoot/wonderland-components';
+import { ServiceLocator, wlUtils } from '@sorskoot/wonderland-components';
 import { quat } from 'gl-matrix';
 import { Observable } from '@sorskoot/wonderland-components';
+import { CellData } from '../../grid-system/index.js';
+import { MapRegistry } from '../../classes/MapRegistry.js';
+import { myCellData } from '../generate-map.js';
 
 // Reused temp quat to avoid allocations when possible
 const _tmpQuat = quat.create();
@@ -52,30 +55,28 @@ export abstract class GridPlacementManager<
     protected _selectedBuilding: Observable<string> = new Observable<string>(
         ''
     );
+    protected _lastTile: CellData | null = null;
 
     // Abstract methods that subclasses must implement
     protected abstract _getPrefabManager(): PrefabManager;
     protected abstract _getDefaultDirection(): TDirection;
     protected abstract _directionToAngle(direction: TDirection): number;
     protected abstract _rotateDirection(direction: TDirection): TDirection;
-    protected abstract _getAvailableItems(): TItem[];
-    protected abstract _getItemMetaComponent(): ComponentConstructor<ItemMeta>;
 
     // Optional hooks for subclasses
     protected _onItemSelected(item: TItem | null): void {}
     protected _onDirectionChanged(direction: TDirection): void {}
-    protected _canPlaceItem(
-        tile: CellData,
-        tilemap: any,
-        item: TItem
-    ): boolean {
+    protected _canPlaceItem(tile: CellData, item: TItem): boolean {
         return true;
     }
-    protected _onItemPlaced(
-        obj: Object3D,
-        tile: CellData,
-        tilemap: any
-    ): void {}
+    protected _onItemPlaced(obj: Object3D, tile: CellData): void {}
+
+    @ServiceLocator.inject(MapRegistry)
+    protected declare _mapRegistry: MapRegistry;
+
+    protected get tilemap() {
+        return this._mapRegistry.getMap<myCellData>();
+    }
 
     init() {
         this._currentDirection = this._getDefaultDirection();
@@ -95,13 +96,14 @@ export abstract class GridPlacementManager<
         }
     }
 
-    handleTileHover(tile: CellData | null, tilemap: any) {
+    handleTileHover(tile: myCellData | null) {
         if (!tile) return;
+        this._lastTile = tile;
 
-        const pos = tilemap.tileToWorldPosition(tile);
+        const pos = this.tilemap.tileToWorldPosition(tile);
 
-        if (this._currentItemType !== null) {
-            this._updatePreview(tile, tilemap);
+        if (this._selectedBuilding.value !== '') {
+            this._updatePreview(tile);
         } else {
             this.highlight.setPositionWorld([pos.x, 0.5, pos.y]);
             this.highlight.setScalingLocal([1, 1, 1]);
@@ -117,11 +119,11 @@ export abstract class GridPlacementManager<
         }
     }
 
-    handleTileClick(tile: CellData | null, tilemap: any) {
+    handleTileClick(tile: myCellData | null) {
         if (!tile) return;
-        this._onItemPlaced(null, tile, tilemap);
+        this._onItemPlaced(null, tile);
 
-        const pos = tilemap.tileToWorldPosition(tile);
+        const pos = this.tilemap.tileToWorldPosition(tile);
         // if (this._currentItemType !== null) {
         //     // Check if placement is allowed
         //     if (!this._canPlaceItem(tile, tilemap, this._currentItemType)) {
@@ -189,7 +191,7 @@ export abstract class GridPlacementManager<
         // }
     }
 
-    protected _updatePreview(tile: CellData, tilemap: any) {}
+    protected _updatePreview(tile: myCellData) {}
 
     protected _setMaterialRecursively(preview: Object3D) {
         wlUtils

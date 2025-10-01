@@ -1,19 +1,14 @@
 import { Object3D, Property, property } from '@wonderlandengine/api';
-import {
-    GenerateMapBase,
-    CellData,
-    ServiceLocator,
-} from '@sorskoot/wonderland-components';
+import { ServiceLocator } from '@sorskoot/wonderland-components';
 import { BuildingManager } from './building-manager.js';
+import { CellData, GenerateMapBase } from '../grid-system/index.js';
+import { MapRegistry } from '../classes/MapRegistry.js';
 
 export type myCellData = CellData & {
     tileObjectId: number;
     obj: Object3D;
 };
 
-/**
- * Example implementation
- */
 export class GenerateMap extends GenerateMapBase<myCellData> {
     static TypeName = 'generate-map';
     static InheritProperties = true;
@@ -30,13 +25,13 @@ export class GenerateMap extends GenerateMapBase<myCellData> {
 
     start() {
         super.start();
-
-        for (const tile of this.tilemap) {
+        const tilemap = ServiceLocator.get(MapRegistry).getMap<myCellData>();
+        for (const tile of tilemap) {
             const id = Math.floor(Math.random() * this.tileObjects.length);
             const obj: Object3D = this.tileObjects[id].clone();
             obj.resetPositionRotation(); // reset position and rotation, but keep scale.
             //const p = this.tilemap.tileToWorldCenter(tile.x, tile.y);
-            const p = this.tilemap.tileToWorldPosition(tile);
+            const p = tilemap.tileToWorldPosition(tile);
             obj.setPositionWorld([p.x, 0, p.y]);
             obj.parent = this.object;
             tile.tileObjectId = id;
@@ -49,11 +44,11 @@ export class GenerateMap extends GenerateMapBase<myCellData> {
 
     override onTileClick(tile: myCellData) {
         // Delegate placement/click handling to BuildingManager
-        this._buildingManager.handleTileClick(tile, this.tilemap);
+        this._buildingManager.handleTileClick(tile);
     }
 
     override onTileHover(tile: myCellData) {
-        this._buildingManager.handleTileHover(tile, this.tilemap);
+        this._buildingManager.handleTileHover(tile);
     }
 
     override onTileUnhover(tile: myCellData) {

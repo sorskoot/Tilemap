@@ -18,7 +18,7 @@ export function rotateDirection(
 ): Direction {
     const dirArray = Object.values(Direction).filter((e) => !isNaN(Number(e)));
     const currentIndex = dirArray.indexOf(direction);
-    const newIndex = clockwise
+    const newIndex = !clockwise
         ? (currentIndex + 1) % dirArray.length
         : (currentIndex - 1 + dirArray.length) % dirArray.length;
     return dirArray[newIndex] as Direction;

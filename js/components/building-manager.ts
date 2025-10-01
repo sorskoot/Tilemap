@@ -77,6 +77,7 @@ export class BuildingManager extends GridPlacementManager<
         if (e.key === 'r') {
             this.rotateDirectionClockwise();
         }
+        this._updatePreview();
     };
 
     onActivate() {
@@ -107,33 +108,14 @@ export class BuildingManager extends GridPlacementManager<
     }
 
     protected _rotateDirection(direction: Direction): Direction {
-        return rotateDirection(direction);
-    }
-
-    protected _getAvailableItems(): BuildingItem[] {
-        return [
-            { id: BuildingState.miner, prefabName: 'Miner' },
-            { id: BuildingState.processor, prefabName: 'Processor' },
-            { id: BuildingState.belt, prefabName: 'Belt' },
-            { id: BuildingState.storage, prefabName: 'Storage' },
-        ];
+        return rotateDirection(direction, true);
     }
 
     protected _getItemMetaComponent(): ComponentConstructor<ItemMeta> {
         return BuildingMeta as any;
     }
 
-    private _getItemForState(state: BuildingState): BuildingItem | null {
-        return (
-            this._getAvailableItems().find((item) => item.id === state) || null
-        );
-    }
-
-    _canPlaceBuilding(
-        size: [number, number],
-        tile: myCellData,
-        tilemap: Tilemap<myCellData>
-    ) {
+    _canPlaceBuilding(size: [number, number], tile: myCellData) {
         let occupied = false;
         const generatedPositions = getGridPositions(
             size,
@@ -141,7 +123,7 @@ export class BuildingManager extends GridPlacementManager<
             this._currentDirection
         );
         for (const [dx, dz] of generatedPositions) {
-            const neighbor = tilemap.getTile(dx, dz);
+            const neighbor = this.tilemap.getTile(dx, dz);
             if (neighbor) {
                 occupied ||= this._placedItemsMap.has(neighbor.id);
             }
@@ -149,19 +131,14 @@ export class BuildingManager extends GridPlacementManager<
         return !occupied;
     }
 
-    _placeBuilding(
-        obj: Object3D,
-        size: [number, number],
-        tile: myCellData,
-        tilemap: Tilemap<myCellData>
-    ) {
+    _placeBuilding(obj: Object3D, size: [number, number], tile: myCellData) {
         const generatedPositions = getGridPositions(
             size,
             [tile.x, tile.y],
             this._currentDirection
         );
         for (const [dx, dz] of generatedPositions) {
-            const neighbor = tilemap.getTile(dx, dz);
+            const neighbor = this.tilemap.getTile(dx, dz);
             if (neighbor) {
                 this._placedItemsMap.set(neighbor.id, obj);
                 if (neighbor.obj) {
@@ -172,23 +149,19 @@ export class BuildingManager extends GridPlacementManager<
         }
     }
 
-    protected _onItemPlaced(
-        obj: Object3D,
-        tile: myCellData,
-        tilemap: Tilemap<myCellData>
-    ): void {
+    protected _onItemPlaced(obj: Object3D, tile: myCellData): void {
         if (this._selectedBuilding.value !== '') {
             const b = this._buildingRegistry.get(this._selectedBuilding.value);
             if (b) {
                 const [width, height] = b.getDimensions(0);
 
-                if (!this._canPlaceBuilding([width, height], tile, tilemap)) {
+                if (!this._canPlaceBuilding([width, height], tile)) {
                     console.log("Can't place building here, space occupied");
                     return;
                 }
                 const obj = this._buildingPrefabs.spawn(b.prefab, this.object);
-                this._placeBuilding(obj, [width, height], tile, tilemap);
-                const pos = tilemap.tileToWorldPosition(tile);
+                this._placeBuilding(obj, [width, height], tile);
+                const pos = this.tilemap.tileToWorldPosition(tile);
                 b.createEntity(obj, [pos.x, 0.5, pos.y], [0, 0, 0]);
                 obj.setPositionWorld([pos.x, 0.5, pos.y]);
                 obj.setRotationLocal(
@@ -204,19 +177,21 @@ export class BuildingManager extends GridPlacementManager<
         //this._globalEvents.EntityPlaced.emit(null);
     }
 
-    protected _updatePreview(tile: CellData, tilemap: any): void {
+    protected _updatePreview(): void {
         if (this._selectedBuilding.value === '') return;
-
-        const pos = tilemap.tileToWorldPosition(tile);
+        if (!this._lastTile) return;
+        const pos = this.tilemap.tileToWorldPosition(
+            this._lastTile as myCellData
+        );
         let preview: Object3D | undefined = this._previews.get(
-            this._currentItemType
+            this._selectedBuilding.value
         );
 
         if (!preview) {
             const b = this._buildingRegistry.get(this._selectedBuilding.value);
             preview = this._getPrefabManager().spawn(b.prefab);
             this._setMaterialRecursively(preview);
-            this._previews.set(this._currentItemType, preview);
+            this._previews.set(this._selectedBuilding.value, preview);
         }
 
         if (this._currentPreview && this._currentPreview !== preview) {
