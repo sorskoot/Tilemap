@@ -12,9 +12,11 @@
 import {Cursor} from '@wonderlandengine/components';
 import {MouseLookComponent} from '@wonderlandengine/components';
 import {WasdControlsComponent} from '@wonderlandengine/components';
+import {BuildingManager} from './components/building-manager.js';
 import {BuildingMeta} from './components/building-meta.js';
 import {BuildingPrefabs} from './components/building-prefabs.js';
 import {GenerateMap} from './components/generate-map.js';
+import {SystemsManagerComponent} from './components/systems-manager-component.js';
 /* wle:auto-imports:end */
 
 
@@ -23,9 +25,11 @@ export default function (engine) {
 engine.registerComponent(Cursor);
 engine.registerComponent(MouseLookComponent);
 engine.registerComponent(WasdControlsComponent);
+engine.registerComponent(BuildingManager);
 engine.registerComponent(BuildingMeta);
 engine.registerComponent(BuildingPrefabs);
 engine.registerComponent(GenerateMap);
+engine.registerComponent(SystemsManagerComponent);
 /* wle:auto-register:end */
 
 }

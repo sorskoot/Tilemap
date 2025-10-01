@@ -224,10 +224,21 @@
                             15.0,
                             15.0
                         ],
+                        "highlight": 15,
+                        "highlightMaterial": 15,
+                        "directionPointer": 19
+                    }
+                },
+                {
+                    "type": "building-manager",
+                    "building-manager": {
                         "highlight": "90",
                         "highlightMaterial": "98",
                         "directionPointer": "100"
                     }
+                },
+                {
+                    "type": "systems-manager-component"
                 }
             ],
             "translation": [
@@ -391,7 +402,7 @@
                 0.0999999
             ],
             "translation": [
-                -5.960464477539063e-8,
+                -5.960464477539065e-8,
                 0.5,
                 0.0
             ],
@@ -953,8 +964,7 @@
             "version": [
                 1,
                 5,
-                0,
-                2
+                0
             ]
         },
         "xr": {
@@ -1261,39 +1271,47 @@
         "1": {
             "fileName": "assets/large_buildingD.glb",
             "importerName": "",
-            "importPhysicalAsPhongMaterials": true
+            "importPhysicalAsPhongMaterials": true,
+            "colorSpace": "srgb"
         },
         "2": {
             "fileName": "assets/large_buildingD.fbx",
             "importerName": "",
-            "importPhysicalAsPhongMaterials": true
+            "importPhysicalAsPhongMaterials": true,
+            "colorSpace": "srgb"
         },
         "3": {
             "fileName": "assets/models.obj",
             "importerName": "",
-            "importPhysicalAsPhongMaterials": true
+            "importPhysicalAsPhongMaterials": true,
+            "colorSpace": "srgb"
         },
         "4": {
             "fileName": "assets/models-1.obj",
             "importerName": "",
-            "importPhysicalAsPhongMaterials": true
+            "importPhysicalAsPhongMaterials": true,
+            "colorSpace": "srgb"
         },
         "5": {
             "fileName": "assets/models-0.obj",
             "importerName": "",
-            "importPhysicalAsPhongMaterials": true
+            "importPhysicalAsPhongMaterials": true,
+            "colorSpace": "srgb"
         },
         "6": {
             "fileName": "assets/Buildings.fbx",
-            "importerName": ""
+            "importerName": "",
+            "colorSpace": "srgb"
         },
         "7": {
             "fileName": "assets/ImphenziaPixPal_BaseColor_2K.png",
-            "importerName": ""
+            "importerName": "",
+            "colorSpace": "srgb"
         },
         "8": {
             "fileName": "assets/ImphenziaPixPal_Emission_2K.png",
-            "importerName": ""
+            "importerName": "",
+            "colorSpace": "srgb"
         }
     },
     "morphTargets": {},

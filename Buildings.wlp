@@ -6,8 +6,7 @@
             "version": [
                 1,
                 5,
-                0,
-                2
+                0
             ],
             "prefab": true
         },
@@ -18,19 +17,23 @@
     "files": {
         "1": {
             "fileName": "assets/Miner.glb",
-            "importerName": ""
+            "importerName": "",
+            "colorSpace": "srgb"
         },
         "2": {
             "fileName": "assets/Buildings.fbx",
-            "importerName": ""
+            "importerName": "",
+            "colorSpace": "srgb"
         },
         "3": {
             "fileName": "assets/ImphenziaPixPal_BaseColor_2K.png",
-            "importerName": ""
+            "importerName": "",
+            "colorSpace": "srgb"
         },
         "4": {
             "fileName": "assets/ImphenziaPixPal_Emission_2K.png",
-            "importerName": ""
+            "importerName": "",
+            "colorSpace": "srgb"
         }
     },
     "meshes": {

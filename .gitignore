@@ -1,7 +1,28 @@
-/.autosave
-/.editor
-/.github
-/cache
-/deploy
-/node_modules
-/sorskoot-wonderland-components-1.5.5.tgz
+**/cache/
+
+# NPM dependencies
+**/node_modules/
+
+# Packaged project files
+**/deploy/
+
+# Local editor data
+**/.editor/
+
+# Local editor js bundle
+**/cache/js/
+
+# Local UI state
+**/imgui.ini
+
+# Blender backup files
+*.blend1
+
+package-lock.json
+
+.vscode/
+.autosave/
+.assetpack/
+.github/
+.sentry-native/
+wle-apitoken.json

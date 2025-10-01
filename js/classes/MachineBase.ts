@@ -1,6 +1,6 @@
 // Rough sketch of Factory Automation game classes
 
-import { AtomSystem } from '@sorskoot/wonderland-components/atomECS';
+import { ECSSystem } from './ECS/ECSSystem.js';
 
 // Thoughts:
 // - Shapez has Buildings, Components, Items and Systems
@@ -41,7 +41,7 @@ export class ItemBase {}
 // - Does a transport need an inventory?
 export class TransportBase extends MachineBase {}
 
-abstract class TransportSystem extends AtomSystem {
+abstract class TransportSystem extends ECSSystem {
     abstract updatePaths();
     abstract tryPlaceItem(item, position);
     abstract updateMovement();

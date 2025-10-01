@@ -1,10 +1,11 @@
 {
-  "compilerOptions": {
-    "target": "es2022",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "experimentalDecorators": true,
-  },
-  "include": [ "./**/*.ts" ],
-  "exclude": ["node_modules", "deploy"]
+    "compilerOptions": {
+        "target": "es2022",
+        "module": "NodeNext",
+        "moduleResolution": "nodenext",
+        "experimentalDecorators": true,
+        "skipLibCheck": true
+    },
+    "include": ["./**/*.ts"],
+    "exclude": ["node_modules", "deploy"]
 }
