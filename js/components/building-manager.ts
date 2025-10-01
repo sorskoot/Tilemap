@@ -18,7 +18,8 @@ import {
 } from './base/grid-placement-manager.js';
 import { ComponentConstructor, Object3D } from '@wonderlandengine/api';
 import { GlobalEvents } from '../classes/GlobalEvents.js';
-import { BuildingRegistry, getGridPositions } from '../classes/conveyor.js';
+import { getGridPositions } from '../classes/getGridPositions.js';
+import { BuildingRegistry } from '../classes/BuildingRegistry.js';
 import { myCellData } from './generate-map.js';
 import { quat } from 'gl-matrix';
 

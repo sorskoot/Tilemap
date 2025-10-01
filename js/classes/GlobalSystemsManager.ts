@@ -1,7 +1,7 @@
 // Something like this?
 
 import { ServiceLocator } from '@sorskoot/wonderland-components';
-import { ConveyorSystem } from './conveyor.js';
+import { ConveyorSystem } from './Buildings/Conveyor.js';
 
 // Maybe a base class.
 @ServiceLocator.register
