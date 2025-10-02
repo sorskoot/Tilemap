@@ -15,9 +15,14 @@
         "@sorskoot/wonderland-components": "file:E:\\Dev\\SorskootWonderlandComponents\\sorskoot-wonderland-components-1.6.0.tgz",
         "@wonderlandengine/api": "file:../../Tools/Wonderland Nightly/js/api/wonderlandengine-api.tgz",
         "@wonderlandengine/components": "^1.2.3",
+        "@wonderlandengine/react-ui": "file:wonderlandengine-react-ui-0.3.0.tgz",
         "gl-matrix": "^3.4.3"
     },
     "overrides": {
         "@wonderlandengine/api": "$@wonderlandengine/api"
+    },
+    "devDependencies": {
+        "@types/node": "^24.6.2",
+        "sharp": "^0.34.4"
     }
 }

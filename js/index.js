@@ -17,6 +17,7 @@ import {BuildingMeta} from './components/building-meta.js';
 import {BuildingPrefabs} from './components/building-prefabs.js';
 import {GenerateMap} from './components/generate-map.js';
 import {SystemsManagerComponent} from './components/systems-manager-component.js';
+import {MainHUD} from './ui/main-hud.tsx';
 /* wle:auto-imports:end */
 
 
@@ -30,6 +31,7 @@ engine.registerComponent(BuildingMeta);
 engine.registerComponent(BuildingPrefabs);
 engine.registerComponent(GenerateMap);
 engine.registerComponent(SystemsManagerComponent);
+engine.registerComponent(MainHUD);
 /* wle:auto-register:end */
 
 }

@@ -412,6 +412,41 @@
                 0.5002579,
                 -0.4997429
             ]
+        },
+        "102": {
+            "name": "Main Hud",
+            "components": [
+                {
+                    "type": "main-hud",
+                    "main-hud": {
+                        "panelMaterial": "101",
+                        "panelMaterialTextured": "102",
+                        "textMaterial": "103",
+                        "space": "screen",
+                        "metalBackground": "8",
+                        "width": 1080,
+                        "height": 1080,
+                        "blueButton": "9",
+                        "yellowButton": "10"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                3.5,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
         }
     },
     "meshes": {
@@ -852,6 +887,24 @@
                     1.0
                 ]
             }
+        },
+        "101": {
+            "name": "UI Color",
+            "pipeline": "92"
+        },
+        "102": {
+            "name": "UI Color Textured",
+            "pipeline": "93",
+            "Flat": {
+                "flatTexture": null
+            }
+        },
+        "103": {
+            "name": "UI Text",
+            "pipeline": "94",
+            "Text": {
+                "font": "56"
+            }
         }
     },
     "shaders": {
@@ -969,7 +1022,10 @@
         },
         "xr": {
             "leftEyeObject": "78",
-            "rightEyeObject": "79"
+            "rightEyeObject": "79",
+            "vr": {
+                "enable": false
+            }
         },
         "scripting": {
             "application": {
@@ -981,7 +1037,8 @@
                 "sourcePaths": [
                     "js/",
                     "js/components",
-                    "js/classes"
+                    "js/classes",
+                    "js/ui"
                 ]
             },
             "libraryPaths": [
@@ -1174,6 +1231,29 @@
                 "name": "VertexColor",
                 "file": "default"
             }
+        },
+        "92": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            },
+            "name": "UI Color",
+            "sampleAlphaToCoverage": true
+        },
+        "93": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            },
+            "name": "UI Color Textured",
+            "sampleAlphaToCoverage": true
+        },
+        "94": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            },
+            "name": "UI Text"
         }
     },
     "textures": {
@@ -1221,6 +1301,24 @@
                 "name": "ImphenziaPixPal_Emission_2K.png",
                 "file": "assets\\ImphenziaPixPal_Emission_2K.png"
             }
+        },
+        "8": {
+            "link": {
+                "name": "metalPanel.png",
+                "file": "assets\\metalPanel.png"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "bar_square_large_square_blue.png",
+                "file": "assets\\bar_square_large_square_blue.png"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "bar_square_large_square_yellow.png",
+                "file": "assets\\bar_square_large_square_yellow.png"
+            }
         }
     },
     "images": {
@@ -1256,6 +1354,25 @@
                 "file": "assets\\ImphenziaPixPal_Emission_2K.png"
             },
             "compression": "uastc"
+        },
+        "6": {
+            "link": {
+                "name": "metalPanel.png",
+                "file": "assets\\metalPanel.png"
+            },
+            "compression": "uastc"
+        },
+        "7": {
+            "link": {
+                "name": "bar_square_large_square_blue.png",
+                "file": "assets\\bar_square_large_square_blue.png"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "bar_square_large_square_yellow.png",
+                "file": "assets\\bar_square_large_square_yellow.png"
+            }
         }
     },
     "fonts": {
@@ -1263,6 +1380,12 @@
             "link": {
                 "name": "DejaVuSans.ttf",
                 "file": "default"
+            }
+        },
+        "56": {
+            "link": {
+                "name": "font_0",
+                "file": "assets\\kenvector_future.ttf"
             }
         }
     },
@@ -1312,6 +1435,22 @@
             "fileName": "assets/ImphenziaPixPal_Emission_2K.png",
             "importerName": "",
             "colorSpace": "srgb"
+        },
+        "9": {
+            "fileName": "assets/kenvector_future.ttf",
+            "importerName": ""
+        },
+        "10": {
+            "fileName": "assets/metalPanel.png",
+            "importerName": ""
+        },
+        "11": {
+            "fileName": "assets/bar_square_large_square_blue.png",
+            "importerName": ""
+        },
+        "12": {
+            "fileName": "assets/bar_square_large_square_yellow.png",
+            "importerName": ""
         }
     },
     "morphTargets": {},

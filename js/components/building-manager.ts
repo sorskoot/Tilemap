@@ -81,11 +81,13 @@ export class BuildingManager extends GridPlacementManager<
     };
 
     onActivate() {
+        super.onActivate();
         this._selectedBuilding.subscribe(this.selectedBuildingChanged);
         window.addEventListener('keydown', this._onKeyDown);
     }
 
     onDeactivate() {
+        super.onDeactivate();
         this._selectedBuilding.unsubscribe(this.selectedBuildingChanged);
         window.removeEventListener('keydown', this._onKeyDown);
     }
@@ -149,7 +151,7 @@ export class BuildingManager extends GridPlacementManager<
         }
     }
 
-    protected _onItemPlaced(obj: Object3D, tile: myCellData): void {
+    protected _onItemPlaced(tile: myCellData): void {
         if (this._selectedBuilding.value !== '') {
             const b = this._buildingRegistry.get(this._selectedBuilding.value);
             if (b) {

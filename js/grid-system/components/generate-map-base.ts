@@ -10,6 +10,7 @@ import { TileInteract } from './tile-interact.js';
 import { ServiceLocator } from '@sorskoot/wonderland-components';
 import { MapRegistry } from '../../classes/MapRegistry.js';
 import { myCellData } from '../../components/generate-map.js';
+import { GridSystemEvents } from '../classes/GridSystemEvents.js';
 
 /**
  * Base component for generating a tile map and wiring optional interaction.
@@ -92,83 +93,84 @@ export class GenerateMapBase<T extends CellData> extends Component {
             if (!this._tileInteract) {
                 this._tileInteract = this.object.addComponent(TileInteract);
             }
-            this._tileInteract.map = map;
         }
+
+        GridSystemEvents.onMapLoaded.notify(map);
     }
 
-    /**
-     * Called when the component is activated (object enabled).
-     *
-     * When interactive, subscribes to TileInteract events.
-     */
-    onActivate(): void {
-        if (this.interactive && this._tileInteract) {
-            this._tileInteract.onClick.add(this._onTileClick);
-            this._tileInteract.onHover.add(this._onTileHover);
-            this._tileInteract.onUnhover.add(this._onTileUnhover);
-        }
-    }
+    // /**
+    //  * Called when the component is activated (object enabled).
+    //  *
+    //  * When interactive, subscribes to TileInteract events.
+    //  */
+    // onActivate(): void {
+    //     if (this.interactive && this._tileInteract) {
+    //         GridSystemEvents.onMapClick.add(this._onTileClick);
+    //         GridSystemEvents.onMapHover.add(this._onTileHover);
+    //         GridSystemEvents.onMapUnhover.add(this._onTileUnhover);
+    //     }
+    // }
 
-    /**
-     * Called when the component is deactivated (object disabled).
-     *
-     * Unsubscribes from TileInteract events to avoid leaks and double-calls.
-     */
-    onDeactivate(): void {
-        if (this.interactive && this._tileInteract) {
-            this._tileInteract.onClick.remove(this._onTileClick);
-            this._tileInteract.onHover.remove(this._onTileHover);
-            this._tileInteract.onUnhover.remove(this._onTileUnhover);
-        }
-    }
+    // /**
+    //  * Called when the component is deactivated (object disabled).
+    //  *
+    //  * Unsubscribes from TileInteract events to avoid leaks and double-calls.
+    //  */
+    // onDeactivate(): void {
+    //     if (this.interactive && this._tileInteract) {
+    //         GridSystemEvents.onMapClick.remove(this._onTileClick);
+    //         GridSystemEvents.onMapHover.remove(this._onTileHover);
+    //         GridSystemEvents.onMapUnhover.remove(this._onTileUnhover);
+    //     }
+    // }
 
-    /**
-     * Internal click event handler that forwards to `onTileClick` hook.
-     *
-     * Kept as a private arrow property so we can add/remove the same
-     * function reference to Wonderland event lists.
-     */
-    private _onTileClick = (tile: CellData | null) => {
-        this.onTileClick(tile as T);
-    };
+    // /**
+    //  * Internal click event handler that forwards to `onTileClick` hook.
+    //  *
+    //  * Kept as a private arrow property so we can add/remove the same
+    //  * function reference to Wonderland event lists.
+    //  */
+    // private _onTileClick = (tile: CellData | null) => {
+    //     this.onTileClick(tile as T);
+    // };
 
-    /**
-     * Internal hover event handler that forwards to `onTileHover` hook.
-     */
-    private _onTileHover = (tile: CellData | null) => {
-        this._currentHoveredTile = tile as T | null;
-        this.onTileHover(tile as T);
-    };
+    // /**
+    //  * Internal hover event handler that forwards to `onTileHover` hook.
+    //  */
+    // private _onTileHover = (tile: CellData | null) => {
+    //     this._currentHoveredTile = tile as T | null;
+    //     this.onTileHover(tile as T);
+    // };
 
-    /**
-     * Internal unhover event handler that forwards to `onTileUnhover` hook.
-     */
-    private _onTileUnhover = (tile: CellData | null) => {
-        this._currentHoveredTile = null;
-        this.onTileUnhover(tile as T);
-    };
+    // /**
+    //  * Internal unhover event handler that forwards to `onTileUnhover` hook.
+    //  */
+    // private _onTileUnhover = (tile: CellData | null) => {
+    //     this._currentHoveredTile = null;
+    //     this.onTileUnhover(tile as T);
+    // };
 
-    /**
-     * Hook called when a tile is clicked. Subclasses should override this to
-     * react to click events on individual tiles.
-     *
-     * @param tile - The tile data that was clicked.
-     */
-    protected onTileClick(tile: T) {}
+    // /**
+    //  * Hook called when a tile is clicked. Subclasses should override this to
+    //  * react to click events on individual tiles.
+    //  *
+    //  * @param tile - The tile data that was clicked.
+    //  */
+    // protected onTileClick(tile: T) {}
 
-    /**
-     * Hook called when a tile is hovered. Subclasses should override this to
-     * show hover states or tooltips.
-     *
-     * @param tile - The tile data being hovered.
-     */
-    protected onTileHover(tile: T) {}
+    // /**
+    //  * Hook called when a tile is hovered. Subclasses should override this to
+    //  * show hover states or tooltips.
+    //  *
+    //  * @param tile - The tile data being hovered.
+    //  */
+    // protected onTileHover(tile: T) {}
 
-    /**
-     * Hook called when a tile hover ends. Subclasses should override this to
-     * clear hover UI/state.
-     *
-     * @param tile - The tile data that was unhovered.
-     */
-    protected onTileUnhover(tile: T) {}
+    // /**
+    //  * Hook called when a tile hover ends. Subclasses should override this to
+    //  * clear hover UI/state.
+    //  *
+    //  * @param tile - The tile data that was unhovered.
+    //  */
+    // protected onTileUnhover(tile: T) {}
 }

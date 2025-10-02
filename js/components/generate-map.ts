@@ -20,9 +20,6 @@ export class GenerateMap extends GenerateMapBase<myCellData> {
     @property.array(Property.object({ required: true }))
     declare tileObjects: Object3D[];
 
-    @ServiceLocator.inject(BuildingManager)
-    private declare _buildingManager: BuildingManager;
-
     start() {
         super.start();
         const tilemap = ServiceLocator.get(MapRegistry).getMap<myCellData>();
@@ -38,20 +35,5 @@ export class GenerateMap extends GenerateMapBase<myCellData> {
             tile.obj = obj;
         }
         // highlight and direction visuals are owned by BuildingManager now
-    }
-
-    update(dt: number) {}
-
-    override onTileClick(tile: myCellData) {
-        // Delegate placement/click handling to BuildingManager
-        this._buildingManager.handleTileClick(tile);
-    }
-
-    override onTileHover(tile: myCellData) {
-        this._buildingManager.handleTileHover(tile);
-    }
-
-    override onTileUnhover(tile: myCellData) {
-        this._buildingManager.handleTileUnhover(tile);
     }
 }

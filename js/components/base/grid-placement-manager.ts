@@ -12,6 +12,7 @@ import { Observable } from '@sorskoot/wonderland-components';
 import { CellData } from '../../grid-system/index.js';
 import { MapRegistry } from '../../classes/MapRegistry.js';
 import { myCellData } from '../generate-map.js';
+import { GridSystemEvents } from '../../grid-system/classes/GridSystemEvents.js';
 
 // Reused temp quat to avoid allocations when possible
 const _tmpQuat = quat.create();
@@ -48,7 +49,7 @@ export abstract class GridPlacementManager<
 
     protected _placedItemsMap: Map<string, Object3D> = new Map();
     protected _currentItemType: TItem | null = null;
-    protected _previews: Map<TItem | string, Object3D> = new Map();
+    protected _previews: Map<string, Object3D> = new Map();
     protected _currentPreview: Object3D | null = null;
     protected _currentDirection: TDirection;
 
@@ -69,7 +70,7 @@ export abstract class GridPlacementManager<
     protected _canPlaceItem(tile: CellData, item: TItem): boolean {
         return true;
     }
-    protected _onItemPlaced(obj: Object3D, tile: CellData): void {}
+    protected _onItemPlaced(tile: CellData): void {}
 
     @ServiceLocator.inject(MapRegistry)
     protected declare _mapRegistry: MapRegistry;
@@ -96,7 +97,19 @@ export abstract class GridPlacementManager<
         }
     }
 
-    handleTileHover(tile: myCellData | null) {
+    onActivate(): void {
+        GridSystemEvents.onMapClick.add(this.handleTileClick);
+        GridSystemEvents.onMapHover.add(this.handleTileHover);
+        GridSystemEvents.onMapUnhover.add(this.handleTileUnhover);
+    }
+
+    onDeactivate(): void {
+        GridSystemEvents.onMapClick.remove(this.handleTileClick);
+        GridSystemEvents.onMapHover.remove(this.handleTileHover);
+        GridSystemEvents.onMapUnhover.remove(this.handleTileUnhover);
+    }
+
+    handleTileHover = (tile: myCellData | null) => {
         if (!tile) return;
         this._lastTile = tile;
 
@@ -108,88 +121,21 @@ export abstract class GridPlacementManager<
             this.highlight.setPositionWorld([pos.x, 0.5, pos.y]);
             this.highlight.setScalingLocal([1, 1, 1]);
         }
-    }
+    };
 
-    handleTileUnhover(_tile: CellData | null) {
+    handleTileUnhover = (_tile: CellData | null) => {
         this.highlight.setScalingLocal([0, 0, 0]);
         this.directionPointer.setScalingLocal([0, 0, 0]);
         if (this._currentPreview) {
             this._currentPreview.setScalingLocal([0, 0, 0]);
             this._currentPreview = null;
         }
-    }
+    };
 
-    handleTileClick(tile: myCellData | null) {
+    handleTileClick = (tile: myCellData | null) => {
         if (!tile) return;
-        this._onItemPlaced(null, tile);
-
-        const pos = this.tilemap.tileToWorldPosition(tile);
-        // if (this._currentItemType !== null) {
-        //     // Check if placement is allowed
-        //     if (!this._canPlaceItem(tile, tilemap, this._currentItemType)) {
-        //         return;
-        //     }
-
-        //     let occupied = false;
-        //     const metaComponent = this._getItemMetaComponent();
-        //     const meta = this._currentPreview?.getComponent(metaComponent) as ItemMeta;
-        //     if (meta) {
-        //         const generatedPositions = meta.getGridPositions(
-        //             [tile.x, tile.y],
-        //             this._currentDirection
-        //         );
-        //         for (const [dx, dz] of generatedPositions) {
-        //             const neighbor = tilemap.getTile(dx, dz);
-        //             if (neighbor) {
-        //                 occupied ||= this._placedItemsMap.has(neighbor.id);
-        //             }
-        //         }
-        //     }
-
-        //     if (occupied) {
-        //         console.log('Tile already has an item');
-        //         return;
-        //     }
-
-        //     const obj = this._getPrefabManager().spawn(this._currentItemType.prefabName, this.object);
-        //     if (!obj) return;
-
-        //     const dirAngle = this._directionToAngle(this._currentDirection);
-        //     obj.setPositionWorld([pos.x, 0.5, pos.y]);
-        //     obj.setRotationLocal(quat.fromEuler(_tmpQuat, 0, dirAngle, 0));
-
-        //     const placedMeta = obj.getComponent(metaComponent) as ItemMeta;
-        //     if (placedMeta) {
-        //         const generatedPositions = placedMeta.getGridPositions(
-        //             [tile.x, tile.y],
-        //             this._currentDirection
-        //         );
-        //         for (const [dx, dz] of generatedPositions) {
-        //             const neighbor = tilemap.getTile(dx, dz);
-        //             if (neighbor) {
-        //                 this._placedItemsMap.set(neighbor.id, obj);
-        //                 if (neighbor.obj) {
-        //                     neighbor.obj.destroy();
-        //                 }
-        //                 neighbor.obj = obj;
-        //             }
-        //         }
-        //     }
-
-        //     this._onItemPlaced(obj, tile, tilemap);
-        // } else {
-        //     // Selection mode - handle existing item selection
-        //     if (this._placedItemsMap.has(tile.id)) {
-        //         console.log(
-        //             `Selecting ${
-        //                 this._placedItemsMap.get(tile.id)?.name
-        //             } on tile ${tile.id}`
-        //         );
-        //     } else {
-        //         console.log(`Nothing on tile ${tile.id}`);
-        //     }
-        // }
-    }
+        this._onItemPlaced(tile);
+    };
 
     protected _updatePreview(tile: myCellData) {}
 
