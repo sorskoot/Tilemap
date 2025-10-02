@@ -13,6 +13,7 @@ import { CellData } from '../../grid-system/index.js';
 import { MapRegistry } from '../../classes/MapRegistry.js';
 import { myCellData } from '../generate-map.js';
 import { GridSystemEvents } from '../../grid-system/classes/GridSystemEvents.js';
+import { GlobalEvents } from '../../classes/GlobalEvents.js';
 
 // Reused temp quat to avoid allocations when possible
 const _tmpQuat = quat.create();
@@ -53,9 +54,6 @@ export abstract class GridPlacementManager<
     protected _currentPreview: Object3D | null = null;
     protected _currentDirection: TDirection;
 
-    protected _selectedBuilding: Observable<string> = new Observable<string>(
-        ''
-    );
     protected _lastTile: CellData | null = null;
 
     // Abstract methods that subclasses must implement
@@ -109,13 +107,15 @@ export abstract class GridPlacementManager<
         GridSystemEvents.onMapUnhover.remove(this.handleTileUnhover);
     }
 
+    protected _selectedBuilding: string = '';
+
     handleTileHover = (tile: myCellData | null) => {
         if (!tile) return;
         this._lastTile = tile;
 
         const pos = this.tilemap.tileToWorldPosition(tile);
 
-        if (this._selectedBuilding.value !== '') {
+        if (this._selectedBuilding !== '') {
             this._updatePreview(tile);
         } else {
             this.highlight.setPositionWorld([pos.x, 0.5, pos.y]);

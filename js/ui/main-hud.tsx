@@ -1,6 +1,7 @@
+import { ServiceLocator } from '@sorskoot/wonderland-components';
 import { Material, Texture } from '@wonderlandengine/api';
 import { property } from '@wonderlandengine/api/decorators.js';
-
+import { GlobalEvents } from '../classes/GlobalEvents.js';
 import {
     Align,
     Justify,
@@ -23,8 +24,10 @@ const App = (props: { comp: MainHUD }) => {
     const onclick = (e: MouseEvent, payload: string) => {
         // prevent objects from being placed
         e.stopImmediatePropagation();
-
-        console.log('Button clicked:', payload);
+        ServiceLocator.get(GlobalEvents).BuildingSelectionChanged.notify(
+            payload
+        );
+        //._globalEvents.BuildingSelectionChanged.notify(payload);
     };
     const theme = {
         components: {
@@ -93,7 +96,7 @@ const App = (props: { comp: MainHUD }) => {
                             <Button
                                 variant="toolbarbutton"
                                 onClick={(data) => {
-                                    onclick(data.e, 'A');
+                                    onclick(data.e, 'miner');
                                 }}
                             >
                                 <Text>miner</Text>
@@ -101,7 +104,7 @@ const App = (props: { comp: MainHUD }) => {
                             <Button
                                 variant="toolbarbutton"
                                 onClick={(data) => {
-                                    onclick(data.e, 'B');
+                                    onclick(data.e, 'conveyor');
                                 }}
                             >
                                 <Text>belt</Text>
@@ -109,7 +112,7 @@ const App = (props: { comp: MainHUD }) => {
                             <Button
                                 variant="toolbarbutton"
                                 onClick={(data) => {
-                                    onclick(data.e, 'C');
+                                    onclick(data.e, 'processor');
                                 }}
                             >
                                 <Text>processor</Text>
@@ -117,7 +120,7 @@ const App = (props: { comp: MainHUD }) => {
                             <Button
                                 variant="toolbarbutton"
                                 onClick={(data) => {
-                                    onclick(data.e, 'C');
+                                    onclick(data.e, 'storage');
                                 }}
                             >
                                 <Text>storage</Text>

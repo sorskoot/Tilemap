@@ -59,41 +59,45 @@ export class BuildingManager extends GridPlacementManager<
     // Keyboard handler is an arrow function so it can be removed safely
     private _onKeyDown = (e: KeyboardEvent) => {
         if (e.key === '0') {
-            this.setItem(null);
-            this._selectedBuilding.value = '';
+            this._globalEvents.BuildingSelectionChanged.notify(null);
         }
         if (e.key === '1') {
-            this._selectedBuilding.value = 'miner';
+            this._globalEvents.BuildingSelectionChanged.notify('miner');
         }
         if (e.key === '2') {
-            this._selectedBuilding.value = 'processor';
+            this._globalEvents.BuildingSelectionChanged.notify('processor');
         }
         if (e.key === '3') {
-            this._selectedBuilding.value = 'conveyor';
+            this._globalEvents.BuildingSelectionChanged.notify('conveyor');
         }
         if (e.key === '4') {
-            this._selectedBuilding.value = 'storage';
+            this._globalEvents.BuildingSelectionChanged.notify('storage');
         }
         if (e.key === 'r') {
             this.rotateDirectionClockwise();
+            this._updatePreview();
         }
-        this._updatePreview();
     };
 
     onActivate() {
         super.onActivate();
-        this._selectedBuilding.subscribe(this.selectedBuildingChanged);
+        this._globalEvents.BuildingSelectionChanged.add(
+            this.selectedBuildingChanged
+        );
         window.addEventListener('keydown', this._onKeyDown);
     }
 
     onDeactivate() {
         super.onDeactivate();
-        this._selectedBuilding.unsubscribe(this.selectedBuildingChanged);
+        this._globalEvents.BuildingSelectionChanged.remove(
+            this.selectedBuildingChanged
+        );
         window.removeEventListener('keydown', this._onKeyDown);
     }
 
-    selectedBuildingChanged = (newState) => {
-        // update preview
+    selectedBuildingChanged = (newState: string | null) => {
+        this._selectedBuilding = newState ?? '';
+        this._updatePreview();
     };
 
     // Implement abstract methods
@@ -152,8 +156,8 @@ export class BuildingManager extends GridPlacementManager<
     }
 
     protected _onItemPlaced(tile: myCellData): void {
-        if (this._selectedBuilding.value !== '') {
-            const b = this._buildingRegistry.get(this._selectedBuilding.value);
+        if (this._selectedBuilding !== '') {
+            const b = this._buildingRegistry.get(this._selectedBuilding);
             if (b) {
                 const [width, height] = b.getDimensions(0);
 
@@ -180,20 +184,20 @@ export class BuildingManager extends GridPlacementManager<
     }
 
     protected _updatePreview(): void {
-        if (this._selectedBuilding.value === '') return;
+        if (this._selectedBuilding === '') return;
         if (!this._lastTile) return;
         const pos = this.tilemap.tileToWorldPosition(
             this._lastTile as myCellData
         );
         let preview: Object3D | undefined = this._previews.get(
-            this._selectedBuilding.value
+            this._selectedBuilding
         );
 
         if (!preview) {
-            const b = this._buildingRegistry.get(this._selectedBuilding.value);
+            const b = this._buildingRegistry.get(this._selectedBuilding);
             preview = this._getPrefabManager().spawn(b.prefab);
             this._setMaterialRecursively(preview);
-            this._previews.set(this._selectedBuilding.value, preview);
+            this._previews.set(this._selectedBuilding, preview);
         }
 
         if (this._currentPreview && this._currentPreview !== preview) {

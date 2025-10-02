@@ -3,6 +3,7 @@ import { BuildingMetaBase } from './BuildingMetaBase.js';
 import { ConveyorMeta } from './Buildings/Conveyor.js';
 import { MinerMeta } from './Buildings/Miner.js';
 import { ProcessorMeta } from './Buildings/Processor.js';
+import { StorageMeta } from './Buildings/Storage.js';
 
 @ServiceLocator.register
 export class BuildingRegistry {
@@ -19,5 +20,6 @@ export class BuildingRegistry {
         this.register('conveyor', new ConveyorMeta());
         this.register('miner', new MinerMeta());
         this.register('processor', new ProcessorMeta());
+        this.register('storage', new StorageMeta());
     }
 }
