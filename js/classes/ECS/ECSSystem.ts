@@ -1,4 +1,4 @@
-import { ECSEntity as ECSEntity } from './ECSEntity.js';
+import {ECSEntity as ECSEntity} from './ECSEntity.js';
 
 /**
  * Abstract base class for all systems in the AtomECS.
@@ -30,7 +30,7 @@ export abstract class ECSSystem {
      * The name of the system
      * @private
      */
-    private _name: string = 'System';
+    private _name: string;
 
     /**
      * Array of entities the system operates on

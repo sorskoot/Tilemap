@@ -1,11 +1,22 @@
-import { ECSComponent } from './ECSComponent.js';
+import {ECSComponent} from './ECSComponent.js';
 
 export class ECSEntity {
+    public readonly id: string;
+
+    /**
+     * Creates a new ECS entity with a unique identifier
+     * Do not instantiate directly, use ECSWorld.createEntity() instead.
+     * @param id - The unique identifier for the entity
+     */
+    constructor(id: string) {
+        this.id = id;
+    }
+
     /**
      * Map of components by their ID
      * @private
      */
-    private _components: { [id: string]: ECSComponent } = {};
+    private _components: {[id: string]: ECSComponent} = {};
 
     /**
      * Adds a component to the entity
@@ -24,6 +35,7 @@ export class ECSEntity {
             throw new Error(`Component with id ${componentId} already exists`);
         }
         this._components[componentId] = componentInstance;
+        // register in the ECSWorld that the entity has a new component?
     }
 
     /**
@@ -67,9 +79,7 @@ export class ECSEntity {
      * });
      * ```
      */
-    getComponents<T extends ECSComponent>(componentType: {
-        new (...args: any[]): T;
-    }): T[] {
+    getComponents<T extends ECSComponent>(componentType: {new (...args: any[]): T}): T[] {
         const results: T[] = [];
         for (const key in this._components) {
             if (this._components[key] instanceof componentType) {

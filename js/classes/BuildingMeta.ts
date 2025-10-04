@@ -1,21 +1,20 @@
-import { Object3D, NumberArray } from '@wonderlandengine/api';
-import { BuildingDescription } from './BuildingDescription.js';
-import { BuildingMetaBase } from './BuildingMetaBase.js';
-import { TransformComponent } from './TransformComponent.js';
-import { ECSEntity } from './ECS/ECSEntity.js';
+import {Object3D, NumberArray} from '@wonderlandengine/api';
+import {BuildingDescription} from './BuildingDescription.js';
+import {BuildingMetaBase} from './BuildingMetaBase.js';
+import {TransformComponent} from './TransformComponent.js';
+import {ECSEntity} from './ECS/ECSEntity.js';
+import {ECSWorld} from './ECS/ECSWorld.js';
 
-export abstract class BuildingMeta<T extends ECSEntity>
-    implements BuildingMetaBase
-{
+export abstract class BuildingMeta implements BuildingMetaBase {
     prefab: string;
     createEntity(
         obj: Object3D,
         position: Readonly<NumberArray>,
         rotation: Readonly<NumberArray>
-    ): T {
-        const entity = new ECSEntity() as T;
+    ): ECSEntity {
+        const entity = ECSWorld.createEntity();
         entity.addComponent(new TransformComponent(obj, position, rotation));
-        this.addComponents(entity);
+        this.onCreate(entity);
         return entity;
     }
 
@@ -27,5 +26,9 @@ export abstract class BuildingMeta<T extends ECSEntity>
         return [1, 1];
     }
 
-    protected abstract addComponents(entity: T): void;
+    /**
+     * Called when an entity is created from this building meta.
+     * @param entity the entity that was just created
+     */
+    protected abstract onCreate(entity: ECSEntity): void;
 }

@@ -1,7 +1,8 @@
 // Something like this?
 
-import { ServiceLocator } from '@sorskoot/wonderland-components';
-import { ConveyorSystem } from './Buildings/Conveyor.js';
+import {ServiceLocator} from '@sorskoot/wonderland-components';
+import {ConveyorSystem} from './Systems/ConveyorSystem.js';
+import {MinerSystem} from './Systems/MinerSystem.js';
 
 // Maybe a base class.
 @ServiceLocator.register
@@ -10,6 +11,7 @@ export class GlobalSystemManager {
 
     registerSystems() {
         this.systems.set('conveyor', new ConveyorSystem());
+        this.systems.set('miner', new MinerSystem());
     }
 
     update() {
