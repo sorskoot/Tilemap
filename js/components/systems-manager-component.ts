@@ -1,6 +1,6 @@
-import { ServiceLocator } from '@sorskoot/wonderland-components';
-import { Component, Object3D } from '@wonderlandengine/api';
-import { GlobalSystemManager } from '../classes/GlobalSystemsManager.js';
+import {ServiceLocator} from '@sorskoot/wonderland-components';
+import {Component, Object3D} from '@wonderlandengine/api';
+import {GlobalSystemManager} from '../classes/GlobalSystemsManager.js';
 
 export class SystemsManagerComponent extends Component {
     static TypeName = 'systems-manager-component';
@@ -15,6 +15,6 @@ export class SystemsManagerComponent extends Component {
     }
 
     update(dt: number) {
-        this._systemsManager.update();
+        this._systemsManager.update(dt);
     }
 }

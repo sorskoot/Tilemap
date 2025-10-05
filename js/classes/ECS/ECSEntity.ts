@@ -1,4 +1,5 @@
 import {ECSComponent} from './ECSComponent.js';
+import {ECSWorld} from './ECSWorld.js';
 
 export class ECSEntity {
     public readonly id: string;
@@ -35,7 +36,34 @@ export class ECSEntity {
             throw new Error(`Component with id ${componentId} already exists`);
         }
         this._components[componentId] = componentInstance;
-        // register in the ECSWorld that the entity has a new component?
+
+        // Register in the ECSWorld
+        ECSWorld.registerComponent(this.id, componentId);
+    }
+
+    /**
+     * Removes a component from the entity
+     *
+     * @param {new (...args: any[]) => T} componentType - The constructor of the component type
+     *
+     * @example
+     * ```typescript
+     * entity.removeComponent(PositionComponent);
+     * ```
+     */
+    removeComponent<T extends ECSComponent>(componentType: {
+        new (...args: any[]): T;
+    }): void {
+        for (const key in this._components) {
+            if (this._components[key] instanceof componentType) {
+                const componentId = this._components[key].id;
+                delete this._components[key];
+
+                // Unregister from ECSWorld
+                ECSWorld.unregisterComponent(this.id, componentId);
+                return;
+            }
+        }
     }
 
     /**

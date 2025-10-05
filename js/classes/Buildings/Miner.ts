@@ -17,6 +17,6 @@ export class MinerMeta extends BuildingMeta {
     }
 
     protected onCreate(entity: ECSEntity): void {
-        entity.addComponent(new ProductionComponent());
+        entity.addComponent(new ProductionComponent(1.0, `ore`));
     }
 }

@@ -1,5 +1,7 @@
+import {TransporterComponent} from '../Components/TransporterComponent.js';
 import {ECSEntity} from '../ECS/ECSEntity.js';
 import {ECSSystem} from '../ECS/ECSSystem.js';
+import {ECSWorld} from '../ECS/ECSWorld.js';
 import {FilteredSystem} from '../FilteredSystem.js';
 
 export class ConveyorSystem extends ECSSystem {
@@ -9,12 +11,43 @@ export class ConveyorSystem extends ECSSystem {
         super('ConveyorSystem');
     }
 
-    update() {
-        this.allEntities.forEach((conveyor) => {
-            //conveyor.update();
-        });
-    }
+    update(deltaTime: number): void {
+        const transporters = ECSWorld.getEntitiesWithComponent(TransporterComponent);
 
-    componentAdded(entity: ECSEntity): void {}
-    componentRemoved(entity: ECSEntity): void {}
+        for (const entity of transporters) {
+            const transporter = entity.getComponent(TransporterComponent);
+            if (!transporter) {
+                continue;
+            }
+
+            // Update items in transition
+            for (const [item, timeRemaining] of transporter.inTransition) {
+                const newTime = timeRemaining - deltaTime;
+                if (newTime <= 0) {
+                    // Transfer complete
+                    transporter.inTransition.delete(item);
+                    transporter.contents.push(item);
+
+                    // Try to move to next transporter
+                    if (transporter.next) {
+                        const nextTransporter =
+                            transporter.next.getComponent(TransporterComponent);
+                        if (
+                            nextTransporter &&
+                            nextTransporter.contents.length < nextTransporter.capacity
+                        ) {
+                            // Move item to next transporter
+                            const idx = transporter.contents.indexOf(item);
+                            if (idx >= 0) {
+                                transporter.contents.splice(idx, 1);
+                                nextTransporter.inTransition.set(item, 1000); // 1 second transition
+                            }
+                        }
+                    }
+                } else {
+                    transporter.inTransition.set(item, newTime);
+                }
+            }
+        }
+    }
 }
