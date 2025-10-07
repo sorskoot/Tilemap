@@ -4,8 +4,7 @@
 - components contain the data for these objects
 - systems add logic
 
-- Entities could be 'dumb' and could be just an ID with some components
-  - I don't think it's needed to add specific functionality for a minerEntity or an oreEntity. This data will be added by adding components to an Entity.
+- Entities are 'dumb' and are nothing more than an ID, with a number of components
 
 - There has to be a registry of entities that could be filtered on 1 or more components. This has to be fast since there could be 1000s of components.
   - is the current HasComponent fast enough? Or should we create a separate collections per component?
@@ -30,3 +29,19 @@ To make this visible we can have entities that have an import or export componen
 To merge and split we need can add merger or splitter components. Or have more specialized version of the transporter with this functionality build in. A separate 'building' would be easiest for now. 1 in 3 out or 3 in 1 out. To have a transporter connect to something.
 
 Who decides if something can connect? Does a target allow something to connect to it or does the source require a specific component to connect to? Or maybe just any of them depending on the case. Let's take an importer. The importer connects an inventory to a transporter. So, the importer knows what an inventory is and what a transporter is. Do we introduce a 'ConnectableComponent'?
+
+## Animations
+
+How will animations be handled? Basically, all animations show some sort of progress. Whether it's a delay before an item is mined, or an item moves across a belt. These animations need to be as smooth as possible and run on the normal update cycle. A normal system would not cut it, because that runs on the TPS and not on the normal cycle. Also, the animations can be skipped if the distance is too big or when things are outside of the the frustrum or something, but the machines need to produce always.
+
+What about 2 types of systems? TPS bound systems and Frame update bound systems? There can be different filters for the frame bound ones. Some only need to run when the UI of a machine is open maybe? Also, the view distance or something can be of influence.
+
+For the frame update bound system, that has to have some reference to a Wonderland component so that it can update a position or such. This connection could be set up when the entity is created?
+
+## Building definitions
+
+Some buildings have an input and/or an output. Buildings have a size that is bigger than 1 tile. Somehow the tile and direction of these inputs/outputs have to be described. Does this have to be done in the BuildingMeta? Or somewhere else?
+
+### in the case of a miner
+
+Is the produced item placed in the output slot or an inventory? Or are input and output slots basically some sort of inventory?

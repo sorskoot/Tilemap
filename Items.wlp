@@ -1,0 +1,449 @@
+{
+    "settings": {
+        "project": {
+            "kind": "prefab",
+            "name": "Items",
+            "version": [
+                1,
+                5,
+                0
+            ],
+            "prefab": true
+        },
+        "xr": {
+            "vr": {
+                "enable": false
+            }
+        }
+    },
+    "files": {
+        "1": {
+            "fileName": "assets/Items/Copper_Nugget_Medium.gltf",
+            "importerName": ""
+        },
+        "2": {
+            "fileName": "assets/resource_bits_texture.png",
+            "importerName": ""
+        }
+    },
+    "meshes": {
+        "1": {
+            "link": {
+                "name": "Copper_Nugget_Medium",
+                "file": "assets\\Items\\Copper_Nugget_Medium.gltf"
+            }
+        }
+    },
+    "images": {
+        "1": {
+            "link": {
+                "name": "resource_bits_texture.png",
+                "file": "assets\\resource_bits_texture.png"
+            }
+        }
+    },
+    "textures": {
+        "1": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\Items\\Copper_Nugget_Medium.gltf"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "resource_bits_texture.png",
+                "file": "assets\\resource_bits_texture.png"
+            }
+        }
+    },
+    "fonts": {},
+    "shaderChunks": {
+        "1": {
+            "link": {
+                "name": "lib\\Color.glsl",
+                "file": "default"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "lib\\Compatibility.glsl",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "lib\\CoordinateSystems.glsl",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "lib\\GI.glsl",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "lib\\Inputs.glsl",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "lib\\Lights.glsl",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "lib\\Materials.glsl",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "lib\\Math.glsl",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "lib\\MorphTargets.glsl",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "lib\\Packing.glsl",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "lib\\PhysicalBSDF.glsl",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "lib\\Quaternion.glsl",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "lib\\SkyProcedural.glsl",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "lib\\Slug.frag.glsl",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "lib\\Slug.vert.glsl",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "lib\\Surface.glsl",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "lib\\Textures.glsl",
+                "file": "default"
+            }
+        },
+        "18": {
+            "link": {
+                "name": "lib\\Uniforms.glsl",
+                "file": "default"
+            }
+        }
+    },
+    "shaders": {
+        "1": {
+            "link": {
+                "name": "AtmosphericSky.frag",
+                "file": "default"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "Background.frag",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "Color.frag",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "Depth.frag",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "DistanceFieldVector.frag",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Dynamic.vert",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "Flat.frag",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "FullScreenTriangle.vert",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "MeshVisualizer.frag",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "Phong.frag",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "Physical.frag",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "Skinning.vert",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "Sky.frag",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "Text.frag",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "Text.vert",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "TileFeedback.frag",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "Particle.frag",
+                "file": "default"
+            }
+        }
+    },
+    "pipelines": {
+        "1": {
+            "link": {
+                "name": "Color",
+                "file": "default"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "VertexColor",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "Phong Normalmapped",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "Phong Lightmapped",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "Physical Opaque",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "TileFeedback",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        },
+        "18": {
+            "link": {
+                "name": "Sky",
+                "file": "default"
+            }
+        },
+        "19": {
+            "link": {
+                "name": "AtmosphericSky",
+                "file": "default"
+            }
+        }
+    },
+    "materials": {
+        "1": {
+            "link": {
+                "name": "resource",
+                "file": "assets\\Items\\Copper_Nugget_Medium.gltf"
+            },
+            "Phong": {
+                "diffuseTexture": "2",
+                "ambientColor": [
+                    0.3,
+                    0.3,
+                    0.3,
+                    1.0
+                ],
+                "shininess": 2,
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        }
+    },
+    "objects": {
+        "1": {
+            "name": "CopperNugget"
+        },
+        "2": {
+            "link": {
+                "name": "Copper_Nugget_Medium",
+                "file": "assets\\Items\\Copper_Nugget_Medium.gltf"
+            },
+            "parent": "1",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    "animations": {},
+    "skins": {},
+    "languages": {},
+    "morphTargets": {},
+    "particleEffects": {},
+    "probeVolumeScenarios": {},
+    "plugins": {}
+}

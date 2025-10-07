@@ -351,10 +351,13 @@
             ]
         },
         "98": {
-            "name": "Buildings",
+            "name": "Prefabs",
             "components": [
                 {
                     "type": "building-prefabs"
+                },
+                {
+                    "type": "items-prefabs"
                 }
             ]
         },
@@ -446,6 +449,27 @@
                 1.0,
                 1.0,
                 1.0
+            ]
+        },
+        "103": {
+            "name": "ItemRegistry",
+            "components": [
+                {
+                    "type": "item-registry-component",
+                    "item-registry-component": {
+                        "items": [
+                            {
+                                "id": "CopperNugget",
+                                "name": "CopperNugget",
+                                "stackable": true,
+                                "maxStack": 50,
+                                "description": "Raw Copper Nugget",
+                                "icon": "11",
+                                "prefab": "CopperNugget"
+                            }
+                        ]
+                    }
+                }
             ]
         }
     },
@@ -1018,7 +1042,8 @@
                 1,
                 5,
                 0
-            ]
+            ],
+            "prefab": false
         },
         "xr": {
             "leftEyeObject": "78",
@@ -1071,7 +1096,8 @@
         },
         "workspace": {
             "files": [
-                "Buildings.wlp"
+                "Buildings.wlp",
+                "Items.wlp"
             ]
         }
     },
@@ -1319,6 +1345,12 @@
                 "name": "bar_square_large_square_yellow.png",
                 "file": "assets\\bar_square_large_square_yellow.png"
             }
+        },
+        "11": {
+            "link": {
+                "name": "CopperNugget.png",
+                "file": "assets\\Items\\CopperNugget.png"
+            }
         }
     },
     "images": {
@@ -1372,6 +1404,12 @@
             "link": {
                 "name": "bar_square_large_square_yellow.png",
                 "file": "assets\\bar_square_large_square_yellow.png"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "CopperNugget.png",
+                "file": "assets\\Items\\CopperNugget.png"
             }
         }
     },
@@ -1450,6 +1488,10 @@
         },
         "12": {
             "fileName": "assets/bar_square_large_square_yellow.png",
+            "importerName": ""
+        },
+        "13": {
+            "fileName": "assets/Items/CopperNugget.png",
             "importerName": ""
         }
     },

@@ -1,8 +1,6 @@
 import {TransporterComponent} from '../Components/TransporterComponent.js';
-import {ECSEntity} from '../ECS/ECSEntity.js';
 import {ECSSystem} from '../ECS/ECSSystem.js';
 import {ECSWorld} from '../ECS/ECSWorld.js';
-import {FilteredSystem} from '../FilteredSystem.js';
 
 export class ConveyorSystem extends ECSSystem {
     // should this listen to the entity events?
